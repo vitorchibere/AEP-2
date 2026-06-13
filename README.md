@@ -47,20 +47,63 @@
 ## Estrutura do sistema
 
 ```
-  AEP/
-├── main.java      
-├── Enums/
-│   ├── Categoria.java      
-│   └── AcompanhamentoDeStatus.java   
-├── Models/
-│   ├── Medicos.java  
-│   ├── Solicitacoes.java              
-│   └── Paciente.java            
-├── Services/
-│   ├── MedicoService.java  
-│   ├── PacienteService.java               
-│   └── SolicitacoesService.java    
-└── 
+src
+└── main
+    ├── java
+    │   └── com.observaacao.observa_acao
+    │
+    │       ├── ObservaAcaoApplication.java
+    │       ├── DataLoader.java
+    │
+    │       ├── controller
+    │       │   ├── HomeController.java
+    │       │   ├── AvaliacaoController.java
+    │       │   ├── SolicitacoesController.java
+    │       │   ├── EquipeController.java
+    │       │   ├── MedicoController.java
+    │       │   └── PacienteController.java
+    │
+    │       ├── model
+    │       │   ├── Paciente.java
+    │       │   ├── Medico.java
+    │       │   ├── UnidadeSaude.java
+    │       │   └── Solicitacoes.java
+    │
+    │       ├── enums
+    │       │   ├── Categoria.java
+    │       │   └── AcompanhamentoDeStatus.java
+    │
+    │       ├── repository
+    │       │   ├── PacienteRepository.java
+    │       │   ├── MedicoRepository.java
+    │       │   ├── UnidadeSaudeRepository.java
+    │       │   └── SolicitacoesRepository.java
+    │
+    │       └── service
+    │           ├── PacienteService.java
+    │           ├── MedicoService.java
+    │           ├── UnidadeSaudeService.java
+    │           └── SolicitacoesService.java
+    │
+    └── resources
+        │
+        ├── application.properties
+        │
+        ├── static
+        │   └── css
+        │       └── style.css
+        │
+        └── templates
+            ├── index.html
+            ├── identificacao.html
+            ├── unidade.html
+            ├── categoria.html
+            ├── profissional.html
+            ├── avaliacao.html
+            ├── sucesso.html
+            ├── acompanhamento.html
+            ├── login.html
+            └── painel.html
 ```
 
 
