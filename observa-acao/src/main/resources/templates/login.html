@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Área Restrita</title>
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+<div class="topo">
+    <h1>ObservAção</h1>
+</div>
+
+<div class="container">
+
+    <h2>Área Restrita</h2>
+
+    <p>
+        Acesso destinado a atendentes e gestores do sistema.
+    </p>
+
+    <form th:action="@{/equipe/painel}" method="get">
+
+        <label>Nome:</label>
+        <input type="text" name="nome" required>
+
+        <label>CPF:</label>
+        <input type="text" name="cpf" required>
+
+        <button type="submit">
+            ENTRAR
+        </button>
+
+    </form>
+
+    <br>
+
+    <a th:href="@{/}">
+        <button class="voltar">
+            Voltar ao Início
+        </button>
+    </a>
+
+</div>
+
+</body>
+</html>

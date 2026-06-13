@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+<head>
+
+    <meta charset="UTF-8">
+    <title>ObservAção</title>
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>ObservAção</h1>
+
+    <p>
+        Sistema de Avaliação dos Serviços Públicos de Saúde
+    </p>
+
+    <div class="menu">
+
+        <a th:href="@{/avaliacao/paciente}">
+            <button>Fazer Avaliação</button>
+        </a>
+
+        <a th:href="@{/acompanhamento}">
+            <button>Acompanhar Solicitação</button>
+        </a>
+
+        <a th:href="@{/equipe/login}">
+            <button>Área Restrita</button>
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

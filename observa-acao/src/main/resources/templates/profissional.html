@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Seleção de Profissional</title>
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+<div class="topo">
+    <h1>ObservAção</h1>
+</div>
+
+
+<div class="container">
+
+    <h2>Selecione o Profissional</h2>
+
+    <p>
+        Escolha o profissional que deseja avaliar.
+    </p>
+
+    <form th:action="@{/avaliacao/profissional}" method="post">
+
+        <label>Profissional:</label>
+
+        <select name="medicoId" required>
+            <option value="">Selecione um profissional</option>
+
+            <option th:each="medico : ${medicos}"
+                    th:value="${medico.id}"
+                    th:text="${medico.nome}">
+            </option>
+        </select>
+
+        <button type="submit">
+            CONFIRMA
+        </button>
+
+    </form>
+
+    <br>
+
+    <a th:href="@{/avaliacao/categoria}">
+        <button class="voltar">
+            Voltar
+        </button>
+    </a>
+
+</div>
+
+</body>
+</html>

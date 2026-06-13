@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Avaliação Enviada</title>
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+<div class="topo">
+    <h1>ObservAção</h1>
+</div>
+
+
+<div class="container">
+
+    <h2>Avaliação enviada com sucesso!</h2>
+
+    <p>
+        Seu feedback foi registrado com sucesso.
+    </p>
+
+    <div class="card">
+
+        <strong>Protocolo:</strong>
+
+        <span th:text="${protocolo}">
+
+        </span>
+
+    </div>
+
+    <br>
+
+    <a th:href="@{/}">
+        <button>
+            Voltar ao Início
+        </button>
+    </a>
+
+    <br><br>
+
+    <a th:href="@{/acompanhamento}">
+        <button>
+            Acompanhar Solicitação
+        </button>
+    </a>
+
+</div>
+
+</body>
+</html>

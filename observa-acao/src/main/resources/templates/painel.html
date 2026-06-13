@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Painel do Gestor</title>
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+<div class="topo">
+    <h1>ObservAção</h1>
+</div>
+
+
+<div class="container">
+
+    <h2>Painel do Gestor</h2>
+
+    <p>
+        Gerenciamento das avaliações registradas.
+    </p>
+
+    <table border="1" style="width:100%; border-collapse: collapse;">
+
+        <tr>
+            <th>Protocolo</th>
+            <th>Paciente</th>
+            <th>Categoria</th>
+            <th>Nota</th>
+            <th>Status</th>
+            <th>Ação</th>
+        </tr>
+
+        <tr th:each="solicitacao : ${solicitacoes}">
+
+            <td th:text="${solicitacao.protocolo}"></td>
+
+            <td th:text="${solicitacao.paciente.nome}"></td>
+
+            <td th:text="${solicitacao.categoria}"></td>
+
+            <td th:text="${solicitacao.nota}"></td>
+
+            <td th:text="${solicitacao.status.descricao}"></td>
+
+            <td>
+
+                <form th:action="@{/equipe/status}" method="post">
+
+                    <input type="hidden"
+                           name="protocolo"
+                           th:value="${solicitacao.protocolo}">
+
+                    <select name="status">
+
+                        <option value="REGISTRADO">
+                            REGISTRADO
+                        </option>
+
+                        <option value="EM_ANALISE">
+                            EM_ANALISE
+                        </option>
+
+                        <option value="FINALIZADO">
+                            FINALIZADO
+                        </option>
+
+                    </select>
+
+                    <button type="submit">
+                        Atualizar
+                    </button>
+
+                </form>
+
+            </td>
+
+        </tr>
+
+    </table>
+
+    <br>
+
+    <a th:href="@{/}">
+        <button class="voltar">
+            Voltar ao Início
+        </button>
+    </a>
+
+</div>
+
+</body>
+</html>

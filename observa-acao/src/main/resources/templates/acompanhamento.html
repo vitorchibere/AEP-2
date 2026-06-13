@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Acompanhamento de Solicitação</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+<div class="topo">
+    <h1>ObservAção</h1>
+</div>
+
+<div class="container">
+
+    <h2>Acompanhar Solicitação</h2>
+
+    <p>Informe o CPF e o protocolo para consultar o andamento.</p>
+
+    <form th:action="@{/acompanhamento}" method="post">
+
+        <label>CPF:</label>
+        <input type="text" name="cpf" required>
+
+        <label>Protocolo:</label>
+        <input type="number" name="protocolo" required>
+
+        <button type="submit">CONSULTAR</button>
+
+    </form>
+
+    <div class="card" th:if="${solicitacao != null}">
+
+        <p><strong>Protocolo:</strong> <span th:text="${solicitacao.protocolo}"></span></p>
+        <p><strong>Paciente:</strong> <span th:text="${solicitacao.paciente.nome}"></span></p>
+        <p><strong>CPF:</strong> <span th:text="${solicitacao.paciente.cpf}"></span></p>
+        <p><strong>Unidade:</strong> <span th:text="${solicitacao.unidadeSaude.nome}"></span></p>
+        <p><strong>Categoria:</strong> <span th:text="${solicitacao.categoria.descricao}"></span>
+        <p><strong>Nota:</strong> <span th:text="${solicitacao.nota}"></span></p>
+        <p><strong>Comentário:</strong> <span th:text="${solicitacao.comentario}"></span></p>
+        <p><strong>Status:</strong> <span th:text="${solicitacao.status}"></span></p>
+        <p><strong>Profissional:</strong> <span th:text="${solicitacao.medico.nome}"></span>
+
+    </div>
+
+    <div class="card" th:if="${erro != null}">
+        <p th:text="${erro}"></p>
+    </div>
+
+    <br>
+
+    <a th:href="@{/}">
+        <button class="voltar">Voltar ao Início</button>
+    </a>
+
+</div>
+
+</body>
+</html>
